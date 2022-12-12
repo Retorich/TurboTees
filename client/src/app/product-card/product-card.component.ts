@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../product'
+import { ActivatedRoute } from '@angular/router';
+
+import { Product} from '../product';
 import { GetProductsService } from '../get-products.service';
+import { ShoppingCartService } from '../shoppingCart.service';
+
+
 
 @Component({
   selector: 'app-product-card',
   template: `
+
+<button type="button" class="btn btn-secondary" onclick= "location.href= '/cart'">
+View Cart
+</button>
+
   <div class="container d-flex flex-wrap justify-content-around">
    <div *ngFor="let product of products$ | async" class="flip-card d-flex flex-wrap" >
    <div class="flip-card-inner" id="cardDetail">
@@ -15,8 +25,8 @@ import { GetProductsService } from '../get-products.service';
      <div class="flip-card-back">
        <div>
        <h1 class="name" id="cardBackText1">{{product.name}}</h1>
-       <p class="price" id="cardBackText2">{{product.price}}</p>
-       <button (click)="addToCart()" class="btn btn-primary"> Add to cart </button>
+       <p class="price" id="cardBackText2">{{product.price | currency }}</p>
+       <button (click)="addToCart(product)" class="btn btn-primary"> Buy </button>
        </div>
      </div>
    </div>
@@ -29,21 +39,19 @@ export class ProductCardComponent implements OnInit {
   products$: Observable<Product[]> = new Observable();
  products: any
 
-  constructor(private productsService: GetProductsService) { 
-  }
-  
+  constructor(private productsService: GetProductsService, private route: ActivatedRoute, private cartService: ShoppingCartService) { }
+
   ngOnInit() {
     this.fetchProducts();
 }
 
 private fetchProducts() {
   this.products$ = this.productsService.getProducts();
-  this.products = this.products$.subscribe((data ) => console.log(data))
-
 }
 
-addToCart() {
-  //code to add to cart
+addToCart(product: Product) {
+  this.cartService.addToCart(product);
+  window.alert('Item added to cart, Thanks !!')
 }
 
 }

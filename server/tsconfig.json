@@ -9,6 +9,8 @@
         "outDir": "dist",
         "baseUrl": ".",
         "allowJs": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
         "paths": {
             "*": ["node_modules/*"]
         }

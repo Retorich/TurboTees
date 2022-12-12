@@ -1,49 +1,18 @@
- <div class="buttonWrapper" data-bs-toggle="modal" href="#exampleModal">
-    <img src="../Template/ShoppingCart/GenieUsShopBasket.svg" alt="Shopping Basket" id="basketIcon"></img>
-    <div class="numberOfItems">0</div>
-  </div>
+<h1>Shopping Cart</h1>
 
-  <!-- Modal -->
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
 
-  <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-dialog-scrollable to modal-dialog-centered">
-      <div class="modal-content">
+<button onclick="clearCart()" type="button" class="btn btn-danger">
+Clear Cart
+</button>
 
-        <div class="modal-header">
+<button type="button" class="btn btn-primary">
+Checkout
+</button>
 
-          <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
-
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-        </div>
-
-        <div class="modal-body">
-
-          <!-- Default text placed onto Button to allow redirect to shopping page when cart shows empty -->
-
-          <button type="button" class="btn btn-primary" onclick="location.href='#'"><!-- need redirect to products --> 
-            No Items... Please click here to add items to your cart.
-          </button>
-
-        </div>
-
-        <div class="totalCart" id="totalCart">Cart Empty - Please click button above for Shopping Page</div>
-        <div class=""></div>
-        <!-- Takes value from UpdateCartTotal() -->
-
-        <!-- total cart value -->
-
-        <div class="modal-footer">
-
-          <button onclick="clearLocalAndRefresh()" type="button" class="btn btn-danger" data-bs-dismiss="modal">
-            Clear Cart
-          </button>
-
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Close
-          </button>
-
-        </div>
-      </div>
-    </div>
-  </div>
+<button type="button" class="btn btn-secondary" onclick= "location.href= '/products'">
+Close
+</button>
