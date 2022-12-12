@@ -1,5 +1,3 @@
- <!-- Shopping Cart Template -->
-
  <div class="buttonWrapper" data-bs-toggle="modal" href="#exampleModal">
     <img src="../Template/ShoppingCart/GenieUsShopBasket.svg" alt="Shopping Basket" id="basketIcon"></img>
     <div class="numberOfItems">0</div>
@@ -23,26 +21,26 @@
 
           <!-- Default text placed onto Button to allow redirect to shopping page when cart shows empty -->
 
-          <button type="button" class="btn btn-primary" onclick="location.href='../GenieUsShop/GenieUsShop.html'">
+          <button type="button" class="btn btn-primary" onclick="location.href='#'"><!-- need redirect to products --> 
             No Items... Please click here to add items to your cart.
           </button>
 
         </div>
 
+        <div class="totalCart" id="totalCart">Cart Empty - Please click button above for Shopping Page</div>
+        <div class=""></div>
+        <!-- Takes value from UpdateCartTotal() -->
+
         <!-- total cart value -->
 
         <div class="modal-footer">
 
-          <div class="totalCart" id="totalCart">Cart Empty - Please click button above for Shopping Page</div>
-          <!-- Takes value from UpdateCartTotal() see shoppingCart.js -->
+          <button onclick="clearLocalAndRefresh()" type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Clear Cart
+          </button>
 
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
-          </button>
-
-          <button type="button" class="btn btn-primary"
-            onclick="location.href='../../GenieUsCheckout/GenieUsCheckout.html'">
-            Continue to Checkout
           </button>
 
         </div>
