@@ -15,7 +15,6 @@ import { ShopLogoComponent } from './shop-logo/shop-logo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductCardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
