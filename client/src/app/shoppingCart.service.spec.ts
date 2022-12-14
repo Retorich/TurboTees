@@ -6,11 +6,14 @@ import { ShoppingCartService } from './shoppingCart.service';
 describe('Service: ShoppingCart', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ShoppingCartService]
+      providers: [ShoppingCartService],
     });
   });
 
-  it('should ...', inject([ShoppingCartService], (service: ShoppingCartService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should ...', inject(
+    [ShoppingCartService],
+    (service: ShoppingCartService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });
