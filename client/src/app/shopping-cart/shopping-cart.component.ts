@@ -58,7 +58,6 @@ import { ShoppingCartService } from '../shoppingCart.service';
 })
 export class ShoppingCartComponent {
   items: any = [];
-
   shipping: number = 0;
   cartTotal: number = 0;
   cartTax: number = 0;
