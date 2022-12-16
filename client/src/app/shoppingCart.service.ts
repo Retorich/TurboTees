@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
 })
 export class ShoppingCartService {
   items: Product[] = [];
-  cartChanged = new Subject<Product[]>();
 
   addToCart(product: Product) {
     this.items.push(product);
