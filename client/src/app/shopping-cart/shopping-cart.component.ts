@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ShoppingCartService } from '../shoppingCart.service';
 
 @Component({
@@ -16,9 +17,7 @@ import { ShoppingCartService } from '../shoppingCart.service';
       ><br />
       <span id="cartText">{{ item.price | currency }}</span>
 
-      <button (click)="removeItem(i)" routerLink="/cart" class="btn btn-danger">
-        Remove
-      </button>
+      <button (click)="removeItem(i)" class="btn btn-danger">Remove</button>
       <hr />
     </div>
     <hr />
@@ -35,12 +34,7 @@ import { ShoppingCartService } from '../shoppingCart.service';
     <hr />
     <hr />
     <div class="container flex">
-      <button
-        (click)="clearCart()"
-        routerLink="/cart"
-        type="button"
-        class="btn btn-danger"
-      >
+      <button (click)="clearCart()" type="button" class="btn btn-danger">
         Clear Cart
       </button>
 
@@ -72,10 +66,10 @@ export class ShoppingCartComponent {
   clearCart() {
     if (this.cartTotal !== 0) {
       this.cartService.clearCart();
-      this.items = [];
       this.cartTotal = this.cartService.getCartTotal();
       this.cartTax = this.cartService.getTax();
       this.shipping = this.cartService.getShipping();
+      this.items = [];
     } else {
       window.alert('Theres nothing in the cart');
     }

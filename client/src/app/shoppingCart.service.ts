@@ -39,13 +39,13 @@ export class ShoppingCartService {
   }
 
   clearCart() {
-    this.items = [];
-    this.items;
+    this.items = []; //creates a new instance of the items array
+    return this.items; // returns the new this.item array overwriting the old array within the service.
   }
 
   removeItem(index: number) {
-    this.items.splice(index, 1);
-    this.items;
+    this.items.splice(index, 1); //Removes the item passed to the function on line 46, only removes that item.
+    this.items; // returns the new this.item array overwriting the old array within the service.
   }
 
   constructor() {}
