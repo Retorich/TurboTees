@@ -1,0 +1,66 @@
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+span {
+  margin: 0px auto;
+}
+
+ul {
+  padding: 0px;
+}
+
+.image {
+  margin: 10px;
+  height: 160px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px grey;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+  padding: 20px;
+}
+
+.btn {
+  margin: 10px;
+  box-shadow: 0 0 5px grey;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+}
+
+#productBox {
+  margin: 0px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+  box-shadow: 0 0 5px grey;
+  padding: 20px;
+}
+
+.newProductButton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ProductListButtons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.ProductListText {
+  margin-top: 38px;
+}
+
+.topTextLine {
+  margin-top: 6px;
+}
+
+

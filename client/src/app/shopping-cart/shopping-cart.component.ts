@@ -15,34 +15,56 @@ import { ShoppingCartService } from '../shoppingCart.service';
       />
       <span id="cartTextTitle">{{ item.name }}</span
       ><br />
-      <span id="cartText">{{ item.price | currency }}</span>
-
-      <button (click)="removeItem(i)" class="btn btn-danger">Remove</button>
+      <div>
+        <span id="dollarSpan">$</span>
+        <span id="cartText">{{ item.price | number : '1.2-2' }}</span>
+      </div>
+      <button id="removeButton" (click)="removeItem(i)" class="btn btn-danger">
+        Remove
+      </button>
       <hr />
     </div>
     <hr />
-    <span>Cart Total (Items) = {{ cartTotal | currency }}</span
+    <span>Cart Total (Items) = $</span
+    ><span id="itemsTotal">{{ cartTotal | number : '1.2-2' }}</span
     ><br />
-    <span>Tax = {{ cartTax | currency }}</span
+    <span>Tax = $</span
+    ><span id="taxTotal">{{ cartTax | number : '1.2-2' }}</span
     ><br />
-    <span>Shipping = {{ shipping | currency }}</span>
+    <span>Shipping = $</span
+    ><span id="shippingTotal">{{ shipping | number : '1.2-2' }}</span>
     <hr />
-    <span
-      >Total Charge (Items + Tax + Shipping) =
-      {{ cartTotal + cartTax + shipping | currency }}</span
+    <span>Total Charge (Items + Tax + Shipping) = $</span
+    ><span id="cartTotal">
+      {{ cartTotal + cartTax + shipping | number : '1.2-2' }}</span
     >
     <hr />
     <hr />
     <div class="container flex">
-      <button (click)="clearCart()" type="button" class="btn btn-danger">
+      <button
+        id="clearCartButton"
+        (click)="clearCart()"
+        type="button"
+        class="btn btn-danger"
+      >
         Clear Cart
       </button>
 
-      <button (click)="noCheckout()" type="button" class="btn btn-primary">
+      <button
+        id="checkoutButton"
+        (click)="noCheckout()"
+        type="button"
+        class="btn btn-primary"
+      >
         Checkout
       </button>
 
-      <button type="button" class="btn btn-secondary" routerLink="/products">
+      <button
+        id="closeButton"
+        type="button"
+        class="btn btn-secondary"
+        routerLink="/products"
+      >
         Close
       </button>
     </div>
@@ -70,6 +92,7 @@ export class ShoppingCartComponent {
       this.cartTax = this.cartService.getTax();
       this.shipping = this.cartService.getShipping();
       this.items = [];
+      window.alert('Cart cleared');
     } else {
       window.alert('Theres nothing in the cart');
     }
@@ -80,6 +103,7 @@ export class ShoppingCartComponent {
     this.cartTotal = this.cartService.getCartTotal();
     this.cartTax = this.cartService.getTax();
     this.shipping = this.cartService.getShipping();
+    window.alert('Product removed from cart');
   }
 
   noCheckout() {

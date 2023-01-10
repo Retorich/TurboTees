@@ -1,0 +1,18 @@
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  margin: 10px;
+  box-shadow: 0 0 5px grey;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+}
+
+.cancelButtonBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -18,7 +18,7 @@ export class ShoppingCartService {
   getCartTotal(): any {
     let cartTotal = 0;
     for (let item of this.items) {
-      let subTotal = item.price;
+      var subTotal = item.price;
       cartTotal += subTotal;
     }
     return cartTotal;
@@ -34,7 +34,13 @@ export class ShoppingCartService {
   }
 
   getShipping() {
-    let shipping = 20;
+    let shipping = 0;
+    if (this.items.length !== 0) {
+      shipping = 20;
+    }
+    if (this.items.length === 0) {
+      shipping = 0;
+    }
     return shipping;
   }
 

@@ -1,7 +1,9 @@
+import * as mongodb from 'mongodb';
+
 export interface Product {
-  id: string;
-  productType: string;
-  name: string;
-  image: string;
-  price: number;
+  productType?: string;
+  name?: string;
+  image?: string;
+  price?: number;
+  _id?: string;
 }

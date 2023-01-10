@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 import { Product } from './product';
 
@@ -24,5 +24,27 @@ export class GetProductsService {
   getProducts(): Subject<Product[]> {
     this.refreshProducts();
     return this.products$;
+  }
+
+  getProduct(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`${this.url}/products/${id}`);
+  }
+
+  addProduct(product: Product): Observable<string> {
+    return this.httpClient.post(`${this.url}/products`, product, {
+      responseType: 'text',
+    });
+  }
+
+  editProduct(id: string, product: Product): Observable<string> {
+    return this.httpClient.put(`${this.url}/products/${id}`, product, {
+      responseType: 'text',
+    });
+  }
+
+  removeProduct(id: string): Observable<string> {
+    return this.httpClient.delete(`${this.url}/products/${id}`, {
+      responseType: 'text',
+    });
   }
 }

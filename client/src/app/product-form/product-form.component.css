@@ -1,0 +1,26 @@
+.form-floating {
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px grey;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+}
+
+.form-control  {
+  border-radius: 20px;
+}
+
+.btn {
+  margin: 10px;
+  box-shadow: 0 0 5px grey;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+}
+
+.addButtonBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

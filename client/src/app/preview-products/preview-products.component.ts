@@ -3,19 +3,21 @@ import { Observable } from 'rxjs';
 
 import { Product } from '../product';
 import { GetProductsService } from '../get-products.service';
-import { ShoppingCartService } from '../shoppingCart.service';
 
 @Component({
-  selector: 'app-product-card',
+  selector: 'app-preview-products',
   template: `
+    <h1>Products Preview</h1>
+    <h3>No buy functionality - this page is just to test rendering</h3>
+    <br />
     <div class="container">
       <button
-        id="viewCartButton"
+        id="returnButton"
         type="button"
         class="btn btn-secondary"
-        routerLink="/cart"
+        routerLink="/productsList"
       >
-        View Cart
+        Return to Product List
       </button>
     </div>
     <br />
@@ -44,30 +46,20 @@ import { ShoppingCartService } from '../shoppingCart.service';
               <p class="price" id="cardBackText2">
                 {{ product.price | currency }}
               </p>
-              <button
-                id="buyButton"
-                (click)="addToCart(product)"
-                class="btn btn-primary"
-              >
-                Buy
-              </button>
+              <button id="buyButton" class="btn btn-primary">Buy</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   `,
-  providers: [GetProductsService],
-  styleUrls: ['./product-card.component.css'],
+  styleUrls: ['./preview-products.component.css'],
 })
-export class ProductCardComponent implements OnInit {
+export class PreviewProductsComponent implements OnInit {
   products$: Observable<Product[]> = new Observable();
   products: any;
 
-  constructor(
-    private productsService: GetProductsService,
-    private cartService: ShoppingCartService
-  ) {}
+  constructor(private productsService: GetProductsService) {}
 
   ngOnInit() {
     this.fetchProducts();
@@ -75,10 +67,5 @@ export class ProductCardComponent implements OnInit {
 
   private fetchProducts() {
     this.products$ = this.productsService.getProducts();
-  }
-
-  addToCart(product: Product) {
-    this.cartService.addToCart(product);
-    window.alert('Item added to cart, Thanks !!');
   }
 }
