@@ -11,6 +11,10 @@ ul {
   padding: 0px;
 }
 
+.btn-success {
+  background-color: darkorange;
+}
+
 .image {
   margin: 10px;
   height: 160px;
@@ -26,7 +30,7 @@ ul {
   margin: 10px;
   box-shadow: 0 0 5px grey;
   border-width: 1px;
-  border-color: grey;
+  border-color: black;
   border-style: solid;
 }
 
