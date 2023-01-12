@@ -14,7 +14,12 @@ import { GetProductsService } from '../get-products.service';
       (formSubmitted)="editProduct($event)"
     ></app-product-form>
     <div class="cancelButtonBox">
-      <button type="button" class="btn btn-danger" routerLink="/productsList">
+      <button
+        id="cancelButton"
+        type="button"
+        class="btn btn-danger"
+        routerLink="/productsList"
+      >
         Cancel
       </button>
     </div>

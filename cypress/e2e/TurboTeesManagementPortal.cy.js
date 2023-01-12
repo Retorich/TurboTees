@@ -72,15 +72,29 @@ describe("Visit Product Management Portal - initial test block will fail if: Tes
     cy.get("#addNewButton").click();
   }); // end of URL test block
 
-  it("Visits Management Portal, gets newly added product, clicks remove button. clicks Product Preview button, checks url change. Finally clicks the Return to Products List button, and checks url change", () => {
+  it("Visits Management Portal, checks previous edit function and gets newly added/edited product. Clicks remove button and ensures that List length has returned to 2. Clicks Product Preview button, checks url change. Finally clicks the Return to Products List button, and checks url change", () => {
     // start of URL test block
     cy.visit("http://localhost:4200/productsList");
 
     cy.get("li")
       .last()
       .within(() => {
+        cy.get("#editButton").click();
+      });
+
+    cy.get("#name").should("have.value", "EDIT TEST");
+
+    cy.get("#cancelButton").click();
+
+    cy.url().should("include", "/productsList");
+
+    cy.get("li")
+      .last()
+      .within(() => {
         cy.get("#removeButton").click();
       });
+
+    cy.get("ul li").should("have.length", 2);
 
     cy.get("#previewButton").click();
 
