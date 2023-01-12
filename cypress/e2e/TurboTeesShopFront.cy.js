@@ -1,4 +1,4 @@
-describe("Visit Shopfront - initial test block will fail if: Test is run against production DB - check app .env (path: C:Capstone - dev copy/TurboTees/server/.env) file has production address commented out and MOCK address is NOT commented out  -  Ensures test environment is initialised before commencing test", () => {
+describe("Visit Shopfront - initial test block will fail if: Test is run against production DB - check app .env (path: TurboTees/server/.env) file has production address commented out and MOCK address is NOT commented out  -  Ensures test environment is initialised before commencing test", () => {
   //start of shop page testing block
 
   it("Visits shopfront, checks URL and ensures TEST environment loaded", () => {
