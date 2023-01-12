@@ -1,0 +1,13 @@
+This Version
+
+fully working including CRUD elements
+
+Basic cypress install - no spec.ts file completion
+
+Added cancel buttons to product-edit and product-add pages - enables cancel and return to /productsList - css position (center vertical) included
+
+changed colour of buttons for add product to green (btn-success)
+
+margin added to mongoDB ID para to center the text of product list sections vertically
+
+added products preview for management portal - no buy or cart functionality, just to check render of new, edited or removed item 
