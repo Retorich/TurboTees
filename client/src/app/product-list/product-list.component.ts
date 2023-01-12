@@ -88,7 +88,7 @@ import { GetProductsService } from '../get-products.service';
   `,
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   products$: Observable<Product[]> = new Observable();
 
   constructor(private productsService: GetProductsService) {}

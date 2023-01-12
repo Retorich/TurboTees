@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { ShoppingCartService } from './shoppingCart.service';
-
 @Component({
   selector: 'app-root',
   template: `
