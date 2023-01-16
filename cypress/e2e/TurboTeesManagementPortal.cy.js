@@ -94,7 +94,7 @@ describe("Visit Product Management Portal - initial test block will fail if: Tes
         cy.get("#removeButton").click();
       });
 
-    cy.get("ul li").should("have.length", 2);
+    cy.get("ul li").should("have.length", 5);
 
     cy.get("#previewButton").click();
 
