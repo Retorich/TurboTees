@@ -71,7 +71,11 @@ import { GetProductsService } from '../get-products.service';
 
         <br />
         <div class="newProductButton">
-          <button id="newButton" class="btn btn-success" [routerLink]="['new']">
+          <button
+            id="newButton"
+            class="btn btn-success"
+            [routerLink]="['/new']"
+          >
             Add a New Product
           </button>
           <button
