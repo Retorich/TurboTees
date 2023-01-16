@@ -72,7 +72,7 @@ describe("Visit Product Management Portal - initial test block will fail if: Tes
     cy.get("#addNewButton").click();
   }); // end of URL test block
 
-  it("Visits Management Portal, checks previous edit function and gets newly added/edited product. Clicks remove button and ensures that List length has returned to 2. Clicks Product Preview button, checks url change. Finally clicks the Return to Products List button, and checks url change", () => {
+  it("Visits Management Portal, checks previous edit function and gets newly added/edited product. Clicks remove button and ensures that List length has returned to 6. Clicks Product Preview button, checks url change. Finally clicks the Return to Products List button, and checks url change", () => {
     // start of URL test block
     cy.visit("http://localhost:4200/productsList");
 
