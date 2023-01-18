@@ -1,5 +1,3 @@
-import * as mongodb from 'mongodb';
-
 export interface Product {
   productType?: string;
   name?: string;
