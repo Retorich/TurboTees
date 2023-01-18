@@ -6,7 +6,7 @@ Basic cypress install - spec files introduced for shop and management portal (fu
 
 Added cancel buttons to product-edit and product-add pages - enables cancel and return to /productsList - css position (center vertical) included
 
-changed colour of buttons for add product to green (btn-success)
+changed colour of buttons for add product to orange (btn-success converted in css) - solving for colour-blindness 
 
 margin added to mongoDB ID para to center the text of product list sections vertically
 
